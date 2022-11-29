@@ -1,0 +1,102 @@
+.nav__logo {
+    grid-area: logo;
+    /* grid-row:1 / 3; */
+    //display:flex;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    justify-items: start;
+    //justify-content: space-between;
+    align-items: center;
+
+    @media @tablet {
+        //padding-top:2rem;
+        //padding: unset;
+
+        
+    } // desktop media area query
+
+    .box{
+        align-self: end;
+        width:6rem;
+        height:6rem;
+        padding:0;
+        //right:4rem;
+        position:relative;
+        background-color:transparent;
+        cursor: pointer;
+        @media @tablet{
+            display: none;
+       
+        }
+         .bar{
+            width:3rem;
+            height:.4rem;
+            position:absolute;
+            top:3rem;
+            right:0;
+            line-height:0;
+            //border:.3rem solid var(--color-grayscale-100);
+            background-color:var(--color-grayscale-200);
+            border-radius: 1px;
+            transition:opacity calc(var(--duration) - 0.5s) linear;
+            &::before, &::after{
+                content:"";
+                position:absolute;
+                display:block;
+                width:3rem;
+                left:0;
+                border:.2rem solid var(--color-grayscale-200);
+                border-radius:1px;
+                transition:transform calc(var(--duration) - 0.5s);
+            }
+
+             
+            &::before{
+                transform-origin:left top;
+                top:0;
+                //bottom:1rem;
+                transform:rotate(0deg) translate(0, -.8rem);
+
+            }
+             &::after{
+                 transform-origin:right top;
+                 bottom:0; //setting this to zero on not x class yield equal distance 
+                 transform:rotate(0deg) translate(0, .8rem);
+
+             }
+           
+        }
+            
+            
+    } 
+        .bar[aria-expanded="true"] {
+            background-color: transparent;
+          &::before{
+                transform:translate(.6rem, -1rem)rotate(45deg);
+                border-radius:.7rem;
+
+                }
+
+        &::after{
+                transform:translate(-.6rem, -1rem)rotate(-45deg) ;
+                border-radius:.7rem;
+            
+            }
+        
+    }
+         
+
+    img {
+        width: 50px;
+        //height: 50px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        padding-top: 1.5rem;
+
+    
+    }
+} // logo wrapper ends here

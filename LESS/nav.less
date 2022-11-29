@@ -1,0 +1,110 @@
+/* navigation styles*/
+// TODO remove the show class from the ul.
+nav {
+    //background:var(--color-secondary-500);
+    -ms-perspective-origin: 800px;
+    perspective-origin: 80rem;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-areas:
+        "logo logo nav-settings"
+        ".    nav-menu nav-menu";
+        grid-gap:0 1rem;
+        align-items:center;
+        width:100%;
+         position: fixed;
+         top:0;
+         left:2rem;
+         z-index:100;
+        // &[data-scroll="true"]{
+        //     position:fixed;
+        //     //width:100%;
+        //     z-index: 100;
+        // }
+        @media @tablet {
+        grid-template-columns:1fr 2fr 10rem;
+        grid-template-areas:
+            "logo nav-menu nav-settings";
+        align-items: center;
+        gap:0;
+        padding-top:1rem;
+    }// Desktop media end
+
+    ul{
+       // display: grid;
+        //grid-gap:1rem;
+        //grid-auto-flow: column;
+        grid-area: nav-menu;
+        align-self:center;
+        // width:300px;
+        /* grid-row: 3 / -1; */
+        padding: 0 1rem 1rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transform:rotateX(90deg);
+        transition:all var(--duration);
+        /* background:var(--grayscale-200); */
+        text-align: center;
+        li{
+            margin-bottom: 1rem;
+           @media @tablet{
+                margin:0;
+            
+                a {
+                    //color: var(--color-brand-100);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+           }
+            a {
+
+                .links();
+            &:hover{
+                .links-hovered(var(--color-secondary-200));
+
+            }
+        }
+    }
+        @media @tablet{
+            align-self:end;
+            display:flex;
+            gap:1rem;
+            //grid-area: nav-menu;
+            //display: grid;
+            //grid-gap:1rem;
+            //grid-auto-flow: column;
+            align-items: center;
+            //padding-top: 4rem;
+            max-height:50rem;
+            transform: rotateX(0);
+            transition: none;
+
+        }
+
+
+    }
+
+    // ul end
+    .show{
+        transform:rotateX(0);
+        max-height: 50rem;
+    }
+    .nav__scheme{
+        font-size: 16px;
+        @media @tablet{
+       font-size:32px;
+        }
+    }
+    [data-scheme="true"]{
+        grid-area:nav-settings;
+        align-self: center;
+        //justify-self: start;
+    }
+    [data-scheme="false"]{
+        display:none;
+    }
+    
+
+}
+
+// nav end

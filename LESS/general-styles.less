@@ -1,0 +1,75 @@
+:root{
+    font-size:62.5%;
+}
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif,'Crimson Pro';
+    font-size: var(--paragraph-small);
+	font-weight:700;
+	font-style:normal;
+	text-transform:none;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background: var(--bg);
+    color:var(--fg);
+        
+        .content-area {
+           display:grid;
+           grid-template-columns: 1fr;
+           grid-gap:8rem;
+        @media @desktop{
+            display:grid;
+            grid-template-columns: 1fr 70% 1fr;
+            grid-template-areas:
+            ". header .  "
+            ". about ."
+            ". featured ."
+            ". project .";
+            overflow-x: hidden;
+          
+        }
+        @media @largeScreen{
+            grid-template-columns: 1fr 60% 1fr;
+        }
+       
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    
+    font-family:'Dosis', sans-serif;
+}
+
+
+section{
+    padding:4% 2rem;
+
+}
+
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+
+
+/*
+Mobile first custom styles
+*/
+
+

@@ -1,0 +1,79 @@
+
+form{
+    padding: 8rem 5rem;
+    margin:0 auto;
+    background: var(--bg-dark);
+    border-radius: 0.8rem;
+    
+    @media @desktop{
+        width:40%;
+        padding-top:3rem;
+    }
+
+    label{
+    font-size: var(--paragraph-regular);
+    display:block;
+    margin-bottom:5rem;
+    color:var(--fg);
+
+}
+
+
+input:not(input[type="checkbox"]){
+    display:block;
+    border-radius: 8px;
+    border:1px solid var(--color-rich-dark-400);
+    width:100%;
+    height:4rem;
+    padding-left: 0.8rem;
+}
+
+input[type="checkbox"]{
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+ p{
+    margin:1rem 0 1rem 0;
+    font-size: var(--paragraph-large);
+    color:var(--color-rich-dark-500);
+}
+textarea{
+    border:1px solid var(--color-grayscale-200);
+    border-radius:8px;
+    display:block;
+    width:100%;
+    padding:0.8rem;
+}
+.cta-btn{
+    width:100%;
+    &:hover{
+         .hovered(var(--color-brand-500), var(--color-grayscale-200));
+    }
+    &:after{
+        outline:thick double transparent;
+    }
+    @media @tablet{
+     width:25%;
+        
+    }
+}
+
+}
+
+.footer__items .contact{
+    text-decoration: underline;
+    color:var(--color-grayscale-100);
+}
+
+.contact-header{
+    height:22vh;
+    @media @desktop{
+        height: 0;
+        padding-top: 0;
+    }
+}
+
+/*Style apply to general but place here cuz of the cascading nature of css*/
+.hide{
+    display:none;
+}

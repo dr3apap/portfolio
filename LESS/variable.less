@@ -1,0 +1,106 @@
+/*
+*****
+Less and css variables
+*/
+
+@desktop:~"(min-width: 1000px)";
+@tablet:~"(min-width: 625px)";
+@largeScreen:~"(min-width: 1250px)";
+@largePhone:~"(min-width: 525px)";
+@mediumPhone:~"(min-width: 470px)";
+@largeScreen:~"(min-width: 1280px)";
+@largerScreen:~"(min-width:1550px)";
+@extraLargeScreen:~"(min-width:1850px)";
+
+html{
+	/** color and gradients*/
+	--color-gradient-300: linear-gradient(to bottom, hsl(203, 93%, 32%) 0%, hsl(24, 92%, 29%) 100%);
+	--color-gradient-100: linear-gradient(to bottom, hsl(203, 58%, 14%) 39.06%, hsl(23, 97%, 46%) 100%);
+	--color-gradient-200: linear-gradient(to bottom, hsl(194, 74%, 86%) 0%, hsl(195, 39%, 51%) 100%);
+	--color-rich-dark-100: hsl(202, 22%, 90%);
+	--color-rich-dark-200: hsl(200, 22%, 87%);
+	--color-rich-dark-300: hsl(201, 8%, 59%);
+	--color-rich-dark-400: hsl(203, 19%, 38%);
+	--color-rich-dark-500: hsl(203, 58%, 14%);
+	--color-brand-100: hsl(23, 64%, 75%);
+	--color-brand-200: hsl(23, 72%, 68%);
+	--color-brand-300: hsl(23, 77%, 61%);
+	--color-brand-400: hsl(24, 80%, 55%);
+	--color-brand-500: hsl(23, 97%, 46%);
+	--color-grayscale-100: hsl(0, 0%, 95%);
+	--color-grayscale-200: hsl(0, 0%, 80%);
+	--color-grayscale-300: hsl(0, 0%, 60%);
+	--color-grayscale-400: hsl(0, 0%, 40%);
+	--color-grayscale-500: hsl(0, 2%, 24%);
+	--color-secondary-100: hsl(203, 73%, 78%);
+	--color-secondary-200: hsl(203, 59%, 70%);
+	--color-secondary-300: hsl(203, 68%, 62%);
+	--color-secondary-400: hsl(203, 82%, 48%);
+	--color-secondary-500: hsl(203, 84%, 29%);
+	--bg: hsl(calc(203 * var(--on)),
+			calc(58 * var(--on) * 1%),
+			calc((95 - 81 * var(--on)) * 1%));
+	--fg: hsl(0, calc((2 - var(--on) * 2) * 1%), calc((24 + var(--on) * (95 - 24)) * 1%));
+			--fp:hsl(203, calc((19 + var(--on)  * (84 - 19)) * 1%), calc((38 - var(--on) * calc(38 - 29)) * 1%));
+			--primary:hsl(23, 97%, 46%);
+			--fp-title:var(--color-secondary-400);
+			--fg-title:hsl(0, calc((2 - var(--on) * 2) * 1%), calc((24 + var(--on) * (80 - 24)) * 1%));
+			--footer-cta:hsl(calc((23 + var(--on) * (203 - 23))) , calc((97 - var(--on) * (97 - 82)) * 1%), calc((46 + var(--on) * (48 - 46)) * 1%));
+			--accordion-title:hsl(calc((203 - var(--on) * (203 - 201))), calc((58 - var(--on) * (58 - 8)) * 1%), calc((14 + var(--on) * (59 - 14)) * 1%));
+			// --footer-bg:hsl(calc((203 - var(--on) * 203) * 1%), 
+			// calc((84 - var(--on) * 84) * 1%) , 
+			// calc((29 - var(--on) * 29) * 1%));
+			--footer-light:hsl(203, 84%, 29%);
+
+			/** animation and misc*/
+			--carousel-pos:2.5rem;
+			--duration:1s;
+			--easing:"ease-in-out";
+			--stagger:0.5s;
+			--interval:calc(var(--duration) - var(--stagger));
+			--scale:1.2;
+			--translate-x:10%;
+
+			/** ttypeface*/
+			--paragraph-caption:1.111rem;
+			--paragraph-small:1.333rem;
+			--paragraph-regular:1.6rem;
+			--paragraph-large:1.92rem;
+			--heading-size:6;
+			--heading-height:0.8rem;
+			--heading-5:1.6rem;
+			--heading-4:1.8rem;
+			--heading-3:2.4rem;
+			--heading-2:3.2rem;
+			--heading-1: 4.8rem;
+			/** Demo's and project card size */
+			--mobile-card:25rem;
+			--tablet-size:35rem;
+			--largeScreen-size:35rem;
+			/** Color scheme dark and light*/
+			--dark-mode:initial;
+			// --LIGHT-MODE:var(--color-grayscale-100);
+			// --DARK-MODE-OFF:var(--on);
+			// --DARK-MODE:var(--on, var(--color-rich-dark-500));
+			// --fp-dark:var(--DARK-MODE-OFF);
+			// --FP-LIGHT:var(--dark-mode, var(--color-rich-dark-400));
+			// --FP-DARK:var(--dark-mode, var(--color-secondary-500));
+			// --fg-dark:var(--DARK-MODE-OFF);
+			// --FG-LIGHT:var(--on, (--color-grayscale-500));
+			// --FG-DARK:var(--LIGHT-MODE);
+			// --footer-dark:var(--dark-mode);
+			// --FOOTER-LIGHT:var(--color-secondary-500);
+			--FOOTER-DARK:var(--color-gradient-100);
+			// --section-heading-dark:var(--DARK-MODE-OFF);
+			// --SECTION-HEADING-DARK:var(var(--on), var(--color-grayscale-200));
+			--on:0;
+			//--SECTION-HEADING-LIGHT:var(--color-grayscale-400);
+			color-scheme: light dark;
+	}
+
+	// HSL :Intensity avg(r, g, b) = 1/3(r + g + b);
+	// HSV :Value Max(r, g, b) Range = Value * saturation(;
+	// HSV: Min(r, g, b) or Range - Max;
+	// HSL :Light = Value = Max(r, g, b);
+	// HSL: min =  Max(r, g, b) - Min(r, g, b);
+	// 

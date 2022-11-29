@@ -1,0 +1,402 @@
+/*Aboust sections styles start here*/
+#project {
+    display: grid;
+    padding: 12rem 2rem 0 2rem;
+    gap: 2rem;
+    // justify-content: center;
+    // align-items: center;
+
+    @media @desktop {
+        // .displayFlex(center, center);
+        grid-area: project;
+        gap: 5rem;
+        padding-top: 20rem;
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+#about-me {
+    padding: 4% 2rem;
+    text-align: left;
+
+    @media @desktop {
+        grid-area: about;
+    }
+}
+.featured-project {
+    position: relative;
+    top: 10rem;
+    background: var(--fp);
+    color: var(--color-secondary-100);
+    margin: 0 auto;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: left;
+    gap: 1rem;
+    // align-items: center;
+    padding: 4% 1rem;
+    @media @desktop{
+        padding:4% 2rem;
+        grid-area: featured;
+
+    }
+
+    // box-shadow: 0px 0px 4px 2.5px rgba(0, 0, 0, 0.25);
+    h2 {
+        font-size: 1.68rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        color: var(--color-brand-400);
+
+        @media @largePhone {
+            font-size: 2rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.68rem;
+        letter-spacing: .2rem;
+        color: var(--fp-title);
+
+        @media @largePhone {
+            font-size: 1.9rem;
+        }
+
+    }
+
+    p {
+        font-size: var(--paragraph-caption);
+    }
+
+    .featured-project__footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2rem;
+        justify-content: start;
+
+        .cta-btn {
+            border-radius: 12rem;
+            border: 1px solid goldenrod;
+            align-self: end;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor:pointer;
+            &:hover{
+                .hovered(var(--color-brand-500), var(--color-grayscale-200));
+            }
+
+            @media @mediumPhone {
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        .featured-project__skills {
+            width: 13rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding-bottom: 0;
+
+            h3 {
+                color: var(--fp-title);
+                letter-spacing: 0.2rem;
+            }
+
+            .featured-project__skills__icon {
+                img {
+                    width: 15%;
+
+                    @media @largePhone {
+                        width: 16.2%;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .featured-project__icon {
+        align-self: baseline;
+        padding-top:0.5rem;
+
+        img {
+           //padding: 0.5rem 0;
+           width:100%;
+           height:100px;
+           border-radius:8px;
+           
+           //box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+           //background-color: var(--color-rich-dark-200);
+
+        }
+
+
+    }
+
+    @media @tablet {
+        grid-template-columns: 200px 1fr;
+        width: 90%;
+
+        p {
+            font-size: var(--paragraph-small);
+        }
+    }
+
+    @media @desktop {
+        width: 75%;
+    }
+}
+
+section {
+    background: var(--bg);
+    text-align: center;
+    transition:background-color calc(var(--duration) / 2);
+        
+    
+    .about-me__wrapper {
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 2rem;
+            padding: 1rem;
+            float: left;
+            shape-outside: circle();
+
+            @media @desktop {
+                width: 250px;
+                height: 250px;
+            }
+
+            // Aboute-me section Desktop media query end
+        }
+
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color:var(--fg-title);
+            @media @largePhone {
+                font-size: 2.5rem;
+            }
+
+            @media @tablet {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    // About me section ends here
+
+    /*Projects Section start here*/
+    .project__header {
+        text-align: left;
+        h2 {
+            font-size: 2rem;
+            color:var(--fg-title);
+
+            @media @largePhone {
+                font-size: 2.5rem;
+            }
+
+            @media @tablet {
+                font-size: 3rem;
+            }
+        }
+
+    }
+
+    .project__wrapper {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(var(--card-width), minmax(25rem, 1fr));
+        place-items: center;
+        overflow-x: hidden;
+        //flex-wrap: nowrap;
+        // flex-flow: column;
+        position: relative;
+        //.project__wrapper__left,
+        //.project__wrapper__right {
+        //display: none;
+        //}
+
+
+        .project__card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 25rem;
+            background: var(--color-rich-dark-300);
+            border-radius: .8rem;
+            margin-bottom: 1.5rem;
+            padding: 3rem 0 1.5rem;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            @media @tablet {
+                //width: 30rem;
+            }
+
+            @media @extraLargeScreen {
+               // width: 35rem;
+            }
+
+            .project__link {
+                color: var(--color-secondary-200);
+                font-size: var(--paragraph-caption);
+            }
+
+            .project__cta {
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+                //padding-left: 4rem;
+                color: var(--color-grayscale-100);
+                margin-bottom: 2rem;
+
+               svg {
+                    justify-self: end;
+                    width: 15%;
+                }
+
+                p {
+                    display: block;
+                    text-align: left;
+                    font-size: var(--paragraph-caption);
+                }
+
+            }
+
+
+            .project__icon {
+                display: grid;
+                place-items: center;
+                margin-bottom: 2rem;
+            
+            }
+
+
+            .project__title {
+                color: var(--color-grayscale-100);
+                // margin-bottom: 2rem;
+            }
+
+            .accordion {
+                /* display: none; */
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                background: var(--bg);
+                margin-bottom: 1rem;
+                padding: 1rem;
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+                max-width: 100%;
+                transition: all var(--duration);
+                p{
+                    font-size:var(--paragraph-caption);
+                }
+
+                .project__description {
+                display: flex;
+                //justify-content: space-evenly;
+               // width: 239px;
+                //height: 27px;
+                gap:1rem;
+                h3{
+                    color:var(--accordion-title);
+                    font-size: var(--heading-4);
+                    margin-bottom: 1rem;
+                    margin-left: 1rem;
+                    letter-spacing: .2rem;
+                    align-self: baseline;
+                }
+                svg{
+                    width:15%;
+                }
+
+                }
+
+
+
+                .project__skills {
+                    margin-top: 1.5rem;
+
+                    img {
+                        align-self: center;
+                        width: 10%;
+                    }
+
+                    h3 {
+                        color:var(--accordion-title);
+                        font-size: var(--heading-4);
+                        margin-bottom: 1rem;
+                        letter-spacing: .2rem;
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+        // projects card end
+
+        .project__wrapper__left,
+        .project__wrapper__right {
+            position: absolute;
+            font-weight: bolder;
+            color: var(--fg);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            // left:-2.5rem;
+            top: 12rem;
+            background: var(--color-grayscale-300);
+            //opacity: 0.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 1px;
+            opacity: 0;
+            transition: all var(--duration);
+            z-index: 100;
+
+            @media @tablet {
+                // top:6rem;
+                width: 30px;
+                height: 30px;
+            }
+            @media @desktop{
+                top:13rem
+
+            }
+
+            
+        }
+
+        .project__wrapper__left {
+            left: 0;
+            //:5rem;
+        }
+
+        .project__wrapper__right {
+            right: 0;
+        }
+
+    }
+
+    // Projects tablet media qurery end
+
+}
+
+// Projects Section ends

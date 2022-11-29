@@ -1,0 +1,40 @@
+.displayFlex(@j:center, @a:center, @flow:row, @gap:0px){
+    display:flex;
+    flex-flow: @flow;
+    justify-content: @j;
+    align-items: @a;
+    
+}
+.diplayFlexWithGap(@space:0){
+    display:flex;
+    gap:@space;
+}
+
+.displayGrid(@gap:0, @contentsposition:center){
+    display:grid;
+    gap:@gap;
+    place-content: @contentsPosition;
+}
+
+.boxShadow(@x:0, @y:0,@blur:4px,@color:hsla(0, 0, 0 0.1)){
+    box-shadow+:@x @y @blur @color; 
+}
+.links(){
+font-size: 1.5rem;
+display: block;
+//background: var(--color-gradient-300);
+color: var(--color-brand-200);
+}
+.links-hovered(@col, @underline:underline){
+    color:@col;
+    text-decoration: @underline;
+}
+
+.hovered(@col, @bg, @bdr:1px solid goldenrod){
+    background-color:@bg;
+    color:@col;
+    border:@bdr;
+}
+.bordered(@size:1px, @col:goldenrod, @sty:solid){
+    border:@size @col @sty;
+}

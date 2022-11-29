@@ -1,0 +1,189 @@
+header {
+    height: 100vh;
+    padding:0 2rem;
+    background:var(--bg-dark);
+    transition: background-color calc(var(--duration) / 2);
+    @media @desktop{
+        grid-area: header;
+    }
+    .hero-area {
+       padding:15rem 0 4rem;
+        text-align: left;
+        display:grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "heading"
+        "scrolling";
+          @media @tablet {
+            padding-top:18rem;
+        }
+        @media @desktop{
+            padding-top: 20rem;
+        }
+
+        
+    
+      
+        .hero-area__inner {
+            grid-area: heading;
+             @media @desktop{
+                --scale:1.5;
+                --translate-x:0;
+                margin-bottom:7rem;
+
+               }
+               @media @mediumPhone{
+                --translate-x:5%;
+               }
+               .title{
+                padding-top: 4rem;
+                animation:hero-effect 4s both;
+                margin-bottom: 3rem;
+                @media @tablet{
+                    padding-top: 0;
+                }
+                 h1 {
+                font-size: 14vw;
+                color:var(--color-secondary-500);
+                line-height:80%;
+               animation:main-heading 4s both;
+
+            }
+            
+            h2{
+                font-size: 8vw;
+                color:var(--color-secondary-500);
+                line-height: 80%;
+                animation:second-heading 4s both;
+            }
+            h1, h2{
+
+                 text-transform: uppercase;
+                 font-weight: bold;
+
+
+            }
+            
+            
+        }
+      .typewriter{
+            //grid-area: icons;
+            //align-self:center;
+            //padding-top:10rem;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:.1rem;
+            @media @mediumPhone{
+                grid-template-columns:2fr 1.5fr;
+            }
+            @media @largePhone{
+                grid-template-columns: 1fr 1fr;
+
+            }
+            //opacity:0;
+            
+            //display:none;
+
+        .hero-text{
+            font-size:1.5rem;
+            color:var(--color-rich-dark-400);  
+            
+            @media @largePhone{
+                font-size:1.9rem;
+            }
+            @media @tablet{
+                font-size:2rem;
+            }
+            @media @desktop{
+                font-size:2.5rem;
+            }
+            @media @largeScreen{
+                //font-size:3rem;
+            }
+            &[data-state="ready"]{
+                border-right:.30rem; 
+                border-right-style:solid; 
+                border-right-color:var(--color-brand-500); 
+                animation:blinker 0.75s 4s step-end infinite;
+            }
+        }
+
+
+            .typewriter__media{ 
+                justify-self: start;
+                opacity:0.02;
+                display:grid;
+                grid-template-columns: repeat(3, 4rem);
+                justify-content: center;
+                grid-template-areas: 
+                ". mobile ."
+                "desktop   . laptop"
+                ".       tablet  .   ";
+                gap:0;
+                //img{border:1px solid green};
+                // img{
+                //    opacity:0;
+                // }
+                .media__img{
+                    @media @tablet{
+                        width:100%;
+                    }
+                    width:70%;
+                    animation:media calc(var(--duration) * 4) calc(var(--interval) * var(--i)) both;
+                }
+            }
+
+            
+           & img:first-of-type{
+            grid-area: mobile;
+            justify-self: center;
+            
+
+            }
+            & img:nth-of-type(2){
+                grid-area:desktop;
+                justify-self: end;
+            }
+            & img:nth-of-type(3){
+                grid-area: laptop;
+                justify-self: start;
+
+            }
+            & img:last-of-type{
+                grid-area: tablet;
+                justify-self: center;
+
+            }
+           
+        }
+    .media-show{ 
+        animation:media-effect calc(var(--duration) * 4) both;
+    }
+        
+
+    }// hero-area__inner end
+        
+ .scroll{
+        grid-area: scrolling;
+        justify-self: start;
+        align-self: start;
+        width:3.2rem;
+        height: 5.5rem;
+        transition:all 1s;
+        @media @tablet{
+            width:4.8rem;
+            height:6.5rem;
+        }
+        @media @desktop{
+            height:8.5rem;
+        } 
+        &[data-fixed="true"]{
+            position:fixed;
+            top:calc(var(--height) * 1rem);
+            z-index:90;
+            
+         }
+       }// scroll end 
+
+}// hero-area end
+} // header end
