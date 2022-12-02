@@ -1,14 +1,10 @@
 /*Aboust sections styles start here*/
-#project {
+#demos {
     display: grid;
     padding: 12rem 2rem 0 2rem;
     gap: 2rem;
-    // justify-content: center;
-    // align-items: center;
-
     @media @desktop {
-        // .displayFlex(center, center);
-        grid-area: project;
+        grid-area: demos;
         gap: 5rem;
         padding-top: 20rem;
         grid-template-columns: 300px 1fr;
@@ -23,7 +19,7 @@
         grid-area: about;
     }
 }
-.featured-project {
+.featured-demos {
     position: relative;
     top: 10rem;
     background: var(--fp);
@@ -34,7 +30,6 @@
     grid-template-columns: 1fr 3fr;
     text-align: left;
     gap: 1rem;
-    // align-items: center;
     padding: 4% 1rem;
     @media @desktop{
         padding:4% 2rem;
@@ -42,7 +37,6 @@
 
     }
 
-    // box-shadow: 0px 0px 4px 2.5px rgba(0, 0, 0, 0.25);
     h2 {
         font-size: 1.68rem;
         text-transform: uppercase;
@@ -69,7 +63,7 @@
         font-size: var(--paragraph-caption);
     }
 
-    .featured-project__footer {
+    .featured-demos__footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.2rem;
@@ -93,7 +87,7 @@
             }
         }
 
-        .featured-project__skills {
+        .featured-demos__skills {
             width: 13rem;
             display: flex;
             flex-direction: column;
@@ -107,7 +101,7 @@
                 letter-spacing: 0.2rem;
             }
 
-            .featured-project__skills__icon {
+            .featured-demos__skills__icon {
                 img {
                     width: 15%;
 
@@ -121,19 +115,14 @@
 
     }
 
-    .featured-project__icon {
+    .featured-demos__icon {
         align-self: baseline;
         padding-top:0.5rem;
 
         img {
-           //padding: 0.5rem 0;
            width:100%;
            height:100px;
            border-radius:8px;
-           
-           //box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-           //background-color: var(--color-rich-dark-200);
-
         }
 
 
@@ -195,8 +184,8 @@ section {
 
     // About me section ends here
 
-    /*Projects Section start here*/
-    .project__header {
+    /*demoss Section start here*/
+    .demos__header {
         text-align: left;
         h2 {
             font-size: 2rem;
@@ -213,22 +202,14 @@ section {
 
     }
 
-    .project__wrapper {
+    .demos__wrapper {
         display: grid;
         gap: 0.8rem;
         grid-template-columns: repeat(var(--card-width), minmax(25rem, 1fr));
         place-items: center;
         overflow-x: hidden;
-        //flex-wrap: nowrap;
-        // flex-flow: column;
         position: relative;
-        //.project__wrapper__left,
-        //.project__wrapper__right {
-        //display: none;
-        //}
-
-
-        .project__card {
+        .demos__card {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -239,25 +220,15 @@ section {
             margin-bottom: 1.5rem;
             padding: 3rem 0 1.5rem;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-            @media @tablet {
-                //width: 30rem;
-            }
-
-            @media @extraLargeScreen {
-               // width: 35rem;
-            }
-
-            .project__link {
+            .demos__link {
                 color: var(--color-secondary-200);
                 font-size: var(--paragraph-caption);
             }
 
-            .project__cta {
+            .demos__cta {
                 display: flex;
                 align-items: center;
                 gap: .2rem;
-                //padding-left: 4rem;
                 color: var(--color-grayscale-100);
                 margin-bottom: 2rem;
 
@@ -275,7 +246,7 @@ section {
             }
 
 
-            .project__icon {
+            .demos__icon {
                 display: grid;
                 place-items: center;
                 margin-bottom: 2rem;
@@ -283,13 +254,11 @@ section {
             }
 
 
-            .project__title {
+            .demos__title {
                 color: var(--color-grayscale-100);
-                // margin-bottom: 2rem;
             }
 
             .accordion {
-                /* display: none; */
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
@@ -304,11 +273,8 @@ section {
                     font-size:var(--paragraph-caption);
                 }
 
-                .project__description {
+                .demos__description {
                 display: flex;
-                //justify-content: space-evenly;
-               // width: 239px;
-                //height: 27px;
                 gap:1rem;
                 h3{
                     color:var(--accordion-title);
@@ -326,7 +292,7 @@ section {
 
 
 
-                .project__skills {
+                .demos__skills {
                     margin-top: 1.5rem;
 
                     img {
@@ -349,20 +315,18 @@ section {
 
         }
 
-        // projects card end
+        // demoss card end
 
-        .project__wrapper__left,
-        .project__wrapper__right {
+        .demos__wrapper__left,
+        .demos__wrapper__right {
             position: absolute;
             font-weight: bolder;
             color: var(--fg);
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            // left:-2.5rem;
             top: 12rem;
             background: var(--color-grayscale-300);
-            //opacity: 0.2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -372,7 +336,6 @@ section {
             z-index: 100;
 
             @media @tablet {
-                // top:6rem;
                 width: 30px;
                 height: 30px;
             }
@@ -384,19 +347,18 @@ section {
             
         }
 
-        .project__wrapper__left {
+        .demos__wrapper__left {
             left: 0;
-            //:5rem;
         }
 
-        .project__wrapper__right {
+        .demos__wrapper__right {
             right: 0;
         }
 
     }
 
-    // Projects tablet media qurery end
+    // demoss tablet media qurery end
 
 }
 
-// Projects Section ends
+// demoss Section ends

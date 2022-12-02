@@ -4,8 +4,8 @@
     const menuControl = document.querySelector("div [aria-controls]");
     const bar = document.querySelector("[aria-expanded]");
     const navBar = document.querySelector("nav ul");
-    const pjCard = document.querySelectorAll(".project__card");
-    const pjWrapper = document.querySelector(".project__wrapper");
+    const pjCard = document.querySelectorAll(".demos__card");
+    const pjWrapper = document.querySelector(".demos__wrapper");
     const tagLine = document.querySelector(".header-tagline-1 span");
     const media = document.querySelector(".typewriter__media");
     const mediaImage = document.querySelectorAll(".typewriter__media img");
@@ -127,7 +127,7 @@
     pjCard.forEach((el) => {
         let accordion = el.querySelector(".accordion-outer");
         let accordionClose = accordion.querySelector("svg");
-        let accordionCta = el.querySelector(".project__cta svg");
+        let accordionCta = el.querySelector(".demos__cta svg");
         let accordionCtaWrapper = el.querySelector(".accordion-cta-open");
 
         accordionCta.addEventListener("click", openAccordion(accordion, accordionCtaWrapper));
@@ -167,7 +167,7 @@
         }
     }
     function makeCarouse() {
-        const carouselCtl = document.querySelectorAll(".project__wrapper button");
+        const carouselCtl = document.querySelectorAll(".demos__wrapper button");
         pjList.slice(minCard).forEach(el => el.style.display = "none");
         pjWrapper.addEventListener("mouseenter", () => {
             carouselCtl.forEach(el => el.style.opacity = "1");
@@ -177,8 +177,8 @@
             carouselCtl.forEach(el => el.removeAttribute("style"));
         })
 
-        const before = pjWrapper.querySelector(".project__wrapper__left");
-        const after = pjWrapper.querySelector(".project__wrapper__right");
+        const before = pjWrapper.querySelector(".demos__wrapper__left");
+        const after = pjWrapper.querySelector(".demos__wrapper__right");
 
         after.addEventListener("click", next);
         before.addEventListener("click", previous);
