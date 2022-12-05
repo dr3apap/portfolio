@@ -226,21 +226,25 @@ section {
             }
 
             .demos__cta {
-                display: flex;
+                display:grid;
+                grid-template-columns:2.2rem 1fr;
+                justify-items: center;
                 align-items: center;
+                gap:0;
                 gap: .2rem;
                 color: var(--color-grayscale-100);
                 margin-bottom: 2rem;
 
                svg {
-                    justify-self: end;
-                    width: 15%;
+                    //justify-self: end;
+                    //width: 15%;
                 }
 
                 p {
-                    display: block;
+                    //display: block;
                     text-align: left;
                     font-size: var(--paragraph-caption);
+                    justify-self: start;
                 }
 
             }
