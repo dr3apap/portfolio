@@ -1,7 +1,7 @@
 /*Footer styles*/
 footer {
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
     background:var(--dark-mode, var(--footer-light));
     margin-top: 8rem;
     transition: background-color calc(var(--duration) / 2); 
@@ -19,14 +19,9 @@ footer {
     }
 
     .footer__items {
-        //padding-bottom: 1rem;
-
         @media @tablet {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            justify-items: start;
-            align-items: center;
-
             @media @desktop {
                 grid-area: footer-items;
             }
@@ -34,9 +29,10 @@ footer {
         }
 
         .socials {
+            justify-self: center;
             border-top: .1rem solid var(--color-grayscale-400);
             margin-bottom: 2rem;
-            padding-top:1rem;
+            padding-top:1.5rem;
             display:flex;
             justify-content: center;
             .socials__link{
@@ -47,50 +43,40 @@ footer {
                      .social{
                 color:var(--color-grayscale-100);
                 font-size: 3.2rem;
+                padding:.5rem;
                 &:hover{
                      background-color: var(--color-grayscale-200);
                     color:var(--color-secondary-300);
                     border-radius: 50%;
-                    padding:.5rem;
                 }
                 @media @tablet {
-                    padding:0;
+                    padding:1rem;
                 }
+                
             }
 
                 }
             @media @tablet {
                 border-top: none;
                 margin: 0;
+                padding:0;
 
             }
-
-           
-
-            svg:first-of-type {
-                padding: .2rem;
-                &:hover{
-                    fill:var(--color-secondary-300);
-                }
+            @media @desktop{
+                justify-self: start;
             }
 
         }
 
         .cta-btn {
+            display:inline-block;
             background-color: var(--footer-cta);
             order: 3;
             margin: 0;
             padding: 1.2rem;
+            .bordered();
             &:hover{
                 .hovered(var(--color-brand-500), var(--color-grayscale-200));
-            }
-            a{
-                &:hover{
-                    color:var(--color-brand-500);
-                }
-            }
-            &:active{
-                outline:thick double transparent;
             }
    
             @media @tablet {
@@ -105,20 +91,22 @@ footer {
         ul {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-
+            align-items: center;
+            gap:0 1rem;
+            margin-bottom: 1rem;
             @media @tablet {
-                align-items: center;
+                margin: 0;
                 order: 2;
+                justify-self: end;
             }
 
             @media @desktop {
                 justify-self: center;
+                padding-left: 0.2rem;
+                
             }
 
             li {
-                margin-bottom: 1rem;
-
                 a {
                     color: var(--color-brand-300);
                     cursor: pointer;
@@ -137,9 +125,8 @@ footer {
     }
 
     .copyright {
-        padding-top: 1rem;
         color: var(--color-rich-dark-200);
-        margin-top: 3rem;
+        margin-top: 2rem;
         width: 100%;
         text-align: center;
 
