@@ -116,9 +116,8 @@ header {
                 grid-template-columns: repeat(3, 4rem);
                 justify-content: center;
                 grid-template-areas: 
-                ". mobile ."
-                "desktop   . laptop"
-                ".       tablet  .   ";
+                ".       desktop    ."
+                "tablet  laptop  mobile";
                 gap:0;
                 //img{border:1px solid green};
                 // img{
@@ -128,29 +127,29 @@ header {
                     @media @tablet{
                         width:100%;
                     }
-                    width:70%;
+                    // width:70%;
                     animation:media calc(var(--duration) * 4) calc(var(--interval) * var(--i)) both;
                 }
             }
 
             
-           & img:first-of-type{
-            grid-area: mobile;
+           & svg:first-of-type{
+            grid-area: desktop;
             justify-self: center;
             
 
             }
-            & img:nth-of-type(2){
-                grid-area:desktop;
+            & svg:nth-of-type(2){
+                grid-area:tablet;
                 justify-self: end;
             }
-            & img:nth-of-type(3){
-                grid-area: laptop;
+            & svg:nth-of-type(3){
+                grid-area: mobile;
                 justify-self: start;
 
             }
-            & img:last-of-type{
-                grid-area: tablet;
+            & svg:last-of-type{
+                grid-area: laptop;
                 justify-self: center;
 
             }

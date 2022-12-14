@@ -8,10 +8,11 @@
     const pjWrapper = document.querySelector(".demos__wrapper");
     const tagLine = document.querySelector(".header-tagline-1 span");
     const media = document.querySelector(".typewriter__media");
-    const mediaImage = document.querySelectorAll(".typewriter__media img");
+    const mediaImage = document.querySelectorAll(".typewriter__media image");
     const scroll = document.querySelector(".scroll");
     const hero = document.querySelector(".title");
     const schemeSettings = document.querySelectorAll("[data-scheme]");
+    console.log(mediaImage)
     const { top: OFFSETY } = hero.getBoundingClientRect();
     function getColorScheme(mode) {
         return getComputedStyle(document.documentElement).getPropertyValue(mode);
