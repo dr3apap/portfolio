@@ -12,22 +12,24 @@
     const scroll = document.querySelector(".scroll");
     const hero = document.querySelector(".title");
     const schemeSettings = document.querySelectorAll("[data-scheme]");
-    console.log(mediaImage)
     const { top: OFFSETY } = hero.getBoundingClientRect();
+    const osTheme = window.matchMedia("(prefers-color-scheme:dark)").matches;
     function getColorScheme(mode) {
         return getComputedStyle(document.documentElement).getPropertyValue(mode);
     }
+
     function setColorScheme(mode, hue) {
         root.style.setProperty(mode, hue);
 
     }
-
-    schemeSettings.forEach((el, i) => el.addEventListener("click", (e) => {
+    osTheme? schemeSettings.forEach(el => el.classList.toggle("hide")):schemeSettings.forEach((el, i) => { 
+        el.classList.remove("hide");
+        el.addEventListener("click", (e) => {
         e.currentTarget.dataset.scheme = "false";
         schemeSettings[i == 0 ? 1 : 0].dataset.scheme = "true";
         colorScheme();
-    }));
-
+    })});
+  
     function colorScheme() {
         let toggleMode = getComputedStyle(document.documentElement).getPropertyValue("--on");
         switch (toggleMode) {

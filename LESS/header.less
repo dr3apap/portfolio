@@ -110,15 +110,19 @@ header {
 
 
             .typewriter__media{ 
+                --svg-size:4rem;
                 justify-self: start;
                 opacity:0.02;
                 display:grid;
-                grid-template-columns: repeat(3, 4rem);
+                grid-template-columns: repeat(3, var(--svg-size));
                 justify-content: center;
                 grid-template-areas: 
                 ".       desktop    ."
                 "tablet  laptop  mobile";
                 gap:0;
+                @media @tablet{
+                    --svg-size:calc(var(--svg-size) + 2.4rem);
+                }
                 //img{border:1px solid green};
                 // img{
                 //    opacity:0;
@@ -131,7 +135,14 @@ header {
                     animation:media calc(var(--duration) * 4) calc(var(--interval) * var(--i)) both;
                 }
             }
-
+           svg{
+            @media @tablet{
+                width:64px;
+                height:64px;
+            }
+    
+           }
+         
             
            & svg:first-of-type{
             grid-area: desktop;
