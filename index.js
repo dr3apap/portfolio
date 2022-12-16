@@ -149,7 +149,7 @@
     console.log(minCard, PJCARDWIDTH);
 
     function next() {
-        if (pjList.length >= sliceIndex) {
+        if (pjList.length > sliceIndex) {
             pjList.slice(sliceIndex - minCard, sliceIndex).forEach((el) => {
                 el.style.display = "none";
             });
@@ -171,20 +171,28 @@
     }
     function makeCarouse() {
         const carouselCtl = document.querySelectorAll(".demos__wrapper button");
+        console.log(sliceIndex, pjList.length);
         pjList.slice(minCard).forEach(el => el.style.display = "none");
         pjWrapper.addEventListener("mouseenter", () => {
-            carouselCtl.forEach(el => el.style.opacity = "1");
+            if (sliceIndex > minCard){
+                carouselCtl[0].style.opacity = "1";
+            }
+            if(pjList.length > sliceIndex){
+                carouselCtl[1].style.opacity = "1";
+            }
+
+            //carouselCtl.forEach(el => el.style.opacity = "1");
 
         });
         pjWrapper.addEventListener("mouseleave", () => {
             carouselCtl.forEach(el => el.removeAttribute("style"));
         })
 
-        const before = pjWrapper.querySelector(".demos__wrapper__left");
-        const after = pjWrapper.querySelector(".demos__wrapper__right");
+        // const before = pjWrapper.querySelector(".demos__wrapper__left");
+        // const after = pjWrapper.querySelector(".demos__wrapper__right");
 
-        after.addEventListener("click", next);
-        before.addEventListener("click", previous);
+        carouselCtl[1].addEventListener("click", next);
+        carouselCtl[0].addEventListener("click", previous);
 
     }
     makeCarouse();
