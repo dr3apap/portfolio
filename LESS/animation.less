@@ -1,24 +1,14 @@
 /*All animations start here*/
-// .scroll circle{
-//     --duration:0.6s;
-//     fill:var(--color-secondary-500);
-//     animation:scroll var(--duration)  alternate infinite;
-//     --webkit-animation:scroll var(--duration) alternate infinite;
-//     --moz-animation:scroll var(--duration) alternate infinite;
-//     --ms-animation:scroll var(--duration) alternate infinite;
-// }
 
+@-webkit-keyframes blinker{
+    from, to{
+        border-right-color: transparent;
+    }
+    50%{
+        border-right-color: hsl(23, 97%, 46%);
 
-// @keyframes scroll{
-    
-//     from{
-//         transform:translate(0, 0);
-//     }
-//     to{
-//         transform:translateY(40%);
-
-//     }
-// }
+    }
+}
 
 @keyframes blinker{
     from, to{
@@ -29,12 +19,34 @@
 
     }
 }
+
+@-webkit-keyframes main-heading{
+    from{
+         clip-path:polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    }
+    50%, to{
+       clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+    }
+}
+
 @keyframes main-heading{
     from{
          clip-path:polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
     }
     50%, to{
        clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+    }
+}
+
+
+@-webkit-keyframes second-heading{
+    from, 50%{
+       opacity:0;
+    }
+    to{
+        opacity:1;
 
     }
 }
@@ -49,29 +61,71 @@
     }
 }
 
-
-
-@keyframes hero-effect{
+@-webkit-keyframes hero-effect{
     from, 50%{
+        -webkit-transform:translate(var(--translate-x), 50%) scale(var(--scale));
         transform:translate(var(--translate-x), 50%) scale(var(--scale));
     }
     to{
+        -webkit-transform:none;
         transform:none;
     }
 
 }
 
-@keyframes media{
+@keyframes hero-effect{
+    from, 50%{
+        -webkit-transform:translate(var(--translate-x), 50%) scale(var(--scale));
+        transform:translate(var(--translate-x), 50%) scale(var(--scale));
+    }
+    to{
+        -webkit-transform:none;
+        transform:none;
+    }
+
+}
+
+@-webkit-keyframes media{
 	from{
+        -webkit-transform:scale(2);
         transform:scale(2);
     }
      50%, 95%{
+         -webkit-transform:rotate(360deg);
         transform:rotate(360deg);
     } 	
     
 	to{
+        -webkit-transform:none;
         transform:none;
 	}
+}
+
+@keyframes media{
+	from{
+        -webkit-transform:scale(2);
+        transform:scale(2);
+    }
+     50%, 95%{
+         -webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    } 	
+    
+	to{
+        -webkit-transform:none;
+        transform:none;
+	}
+}
+
+
+@-webkit-keyframes media-effect{
+    from, 95%{
+        opacity:1;
+
+    }
+    to {
+        opacity:0.02;
+    }
 }
 
 @keyframes media-effect{
