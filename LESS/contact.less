@@ -1,6 +1,9 @@
 
+.contact{
+    padding:8rem 2rem 0 2rem;
 form{
-    padding: 8rem 5rem;
+    width:100%;
+    max-width:var(--max-width);
     margin:0 auto;
     background: var(--bg-dark);
     border-radius: 0.8rem;
@@ -60,20 +63,23 @@ textarea{
 }
 
 }
+}// end of contact/form
 
-.footer__items .contact{
+.footer__items .contact__cta{
     text-decoration: underline;
-    color:var(--color-grayscale-100);
+    color:var(--color-secondary-300);
+    background-color:transparent !important;
+    border: none !important;
+    cursor:pointer;
+    &:hover{
+     color:var(--color-grayscale-200);
+}
 }
 
 .contact-header{
-    height:22vh;
-    @media @desktop{
-        height: 0;
-        padding-top: 0;
-    }
+    height:15vh;
+    min-height:15vh;
 }
-
 /*Style apply to general but place here cuz of the cascading nature of css*/
 .hide{
     display:none;

@@ -1,5 +1,14 @@
-:root{
+html{
     font-size:62.5%;
+    &:focus-within{
+        scroll-behavior:smooth;
+    }
+    @media(prefers-reduced-motion){
+        &:focus-within{
+            scroll-behavior:auto;
+        }
+
+    }
 }
 
 
@@ -13,7 +22,7 @@
 }
 
 body{
-    font-family: 'Noto Sans', sans-serif,'Crimson Pro';
+    font-family:Inter,'Nunito Sans',-apple-system,\.SFNSText-Regular,'San Francisco',BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: var(--paragraph-small);
 	font-weight:700;
 	font-style:normal;
@@ -37,7 +46,6 @@ body{
             ". about ."
             ". featured ."
             ". demos .";
-            overflow-x: hidden;
           
         }
         @media @largeScreen{
@@ -68,7 +76,10 @@ img{
     height:auto;
 }
 
-
+::selection{
+    background-color:hsl(60, 50%, 50%);
+    color:hsl(0, 50%, 50%);
+}
 
 /*
 Mobile first custom styles

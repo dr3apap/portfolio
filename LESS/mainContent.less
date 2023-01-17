@@ -14,7 +14,6 @@
 #about-me {
     padding: 4% 2rem;
     text-align: left;
-
     @media @desktop {
         grid-area: about;
     }
@@ -148,7 +147,10 @@ section {
     transition:background-color calc(var(--duration) / 2);
         
     
-    .about-me__wrapper {
+    .about-me__details {
+          p:last-of-type{
+            margin-top:1rem;
+        }
         img {
             width: 200px;
             height: 200px;
@@ -157,7 +159,6 @@ section {
             padding: 1rem;
             float: left;
             shape-outside: circle();
-
             @media @desktop {
                 width: 250px;
                 height: 250px;
